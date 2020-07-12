@@ -1,25 +1,19 @@
 import React from "react";
 
-//import all images
-function importAll(r) {
-  return r.keys().map(r);
-}
-const images = importAll(
-  require.context("../imgs", false, /\.(png|jpe?g|svg)$/)
-);
-
-export default function AllPhotos(props) {
+export default function AllPhotos({ setView, setPhotoUrl, images }) {
   return (
     <>
       <div className={"gallery"}>
         {images.map((url, index) => {
           return (
             <img
+              id={index}
               key={index}
               src={url}
               className={"gallery-image"}
               onClick={() => {
-                props.setView("singlePhoto");
+                setView("singlePhoto");
+                setPhotoUrl(url);
               }}
             ></img>
           );

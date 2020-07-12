@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Sidebar(props) {
-  console.log(props.sidebar);
   if (props.sidebar === "sidebar") {
     return (
       <>
@@ -16,7 +15,7 @@ export default function Sidebar(props) {
             </a>
             <p>
               All photos were taken by Yurika and developed using a disposable
-              camera.{" "}
+              camera.
             </p>
             <p>Contact me if you want a copy.</p>
           </div>
