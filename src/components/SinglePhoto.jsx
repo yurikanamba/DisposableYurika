@@ -1,13 +1,9 @@
 import React from "react";
 
 function SinglePhoto({ setView, setPhotoUrl, photoURL, images }) {
+  console.log(photoURL);
   return (
-    <div
-      className={"dark-window"}
-      onClick={() => {
-        console.log("clicked");
-      }}
-    >
+    <div className={"dark-window"}>
       <div
         id="close-btn"
         onClick={() => {

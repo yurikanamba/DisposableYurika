@@ -59,6 +59,7 @@ export default function App() {
             <AllPhotos
               setView={setView}
               setPhotoUrl={setPhotoUrl}
+              photoURL={photoURL}
               images={images}
             />
           </div>
