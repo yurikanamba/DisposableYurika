@@ -203,6 +203,7 @@ h1 {
   justify-content: center;
   font-size: 2em;
   cursor: pointer;
+  z-index: 100;
 }
 
 #close-btn:hover {
@@ -222,6 +223,16 @@ h1 {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
+  }
+
+  .photo-container {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .photo-container img {
+    height: 90%;
   }
 }
 
@@ -325,7 +336,7 @@ h1 {
     display: none;
   }
 
-  .fab {
+  /* .fab {
     border: 1px solid red;
     margin: 0px;
     top: auto;
@@ -333,5 +344,5 @@ h1 {
     bottom: 20px;
     left: auto;
     position: fixed;
-  }
+  } */
 }
