@@ -1,7 +1,7 @@
 import React from "react";
+import { Image } from 'cloudinary-react';
 
-function SinglePhoto({ setView, setPhotoUrl, photoURL, images }) {
-  console.log(photoURL);
+function SinglePhoto({ setView, setImagePublicId, imagePublicId, imagePublicIds }) {
   return (
     <div className={"dark-window"}>
       <div
@@ -16,27 +16,30 @@ function SinglePhoto({ setView, setPhotoUrl, photoURL, images }) {
         id="back-btn"
         onClick={() => {
           let desiredIndex =
-            images.indexOf(photoURL) === 0
-              ? images.length - 1
-              : images.indexOf(photoURL) - 1;
+            imagePublicIds.indexOf(imagePublicId) === 0
+              ? imagePublicIds.length - 1
+              : imagePublicIds.indexOf(imagePublicId) - 1;
 
-          setPhotoUrl(images[desiredIndex]);
+          setImagePublicId(imagePublicIds[desiredIndex]);
         }}
       >
         ◀
       </div>
       <div className={"photo-container"}>
-        <img src={photoURL}></img>
+        <Image
+          cloudName={"dgzyroejc"}
+          publicId={imagePublicId}
+        />
       </div>
       <div
         id="next-btn"
         onClick={() => {
           let desiredIndex =
-            images.indexOf(photoURL) === images.length - 1
+            imagePublicIds.indexOf(imagePublicId) === imagePublicIds.length - 1
               ? 0
-              : images.indexOf(photoURL) + 1;
+              : imagePublicIds.indexOf(imagePublicId) + 1;
 
-          setPhotoUrl(images[desiredIndex]);
+          setImagePublicId(imagePublicIds[desiredIndex]);
         }}
       >
         ▶
