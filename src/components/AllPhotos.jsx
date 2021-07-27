@@ -1,28 +1,37 @@
 import React from "react";
-import { Image } from 'cloudinary-react';
+import { Image, Placeholder } from "cloudinary-react";
 
-export default function AllPhotos({ setView, setImagePublicId, imagePublicIds }) {
+export default function AllPhotos({
+  setView,
+  setImagePublicId,
+  imagePublicIds,
+}) {
   return (
     <>
       <div className={"gallery"}>
         {imagePublicIds.map((id, index) => {
           return (
-            <div className={"placeholder"} >
-                <div                     
-                  onClick={() => {
-                    setView("singlePhoto");
-                    setImagePublicId(id);
-                  }}>
+            <div>
+              <div
+                onClick={() => {
+                  setView("singlePhoto");
+                  setImagePublicId(id);
+                }}
+              >
                 <Image
                   key={index}
-                  cloudName={"dgzyroejc"}
+                  cloudName="dgzyroejc"
                   publicId={id}
-                />
-                </div>
+                  loading="lazy"
+                >
+                  <Placeholder type="blur" />
+                </Image>
+              </div>
             </div>
           );
         })}
       </div>
+      )
     </>
   );
 }
