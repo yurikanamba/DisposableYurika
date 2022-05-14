@@ -16,7 +16,7 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get("http://res.cloudinary.com/dgzyroejc/image/list/browser-upload.json")
+      .get("https://res.cloudinary.com/dgzyroejc/image/list/browser-upload.json")
       .then((res) => {
         const data = res.data.resources;
         const publicIds = data.map((imageData) => imageData.public_id);
